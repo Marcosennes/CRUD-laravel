@@ -16,12 +16,14 @@
                         </div>
                     @endif
                     <table class="table">
-                        <thead>
+                        <thead style="background: darkgray; ">
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Endereço</th>
                                 <th scope="col">Número</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,9 +34,9 @@
                             <td>{{ $cliente->endereco }}</td>
                             <td>{{ $cliente->numero }}</td>
                             <td>
-                                <a class="btn btn-default btn-sm" href="/clientes/{{ $cliente->id }}/editar">Editar</a>
+                                <a class="btn btn-default btn-outline-info" style="height: 35px; " href="/clientes/{{ $cliente->id }}/editar">Editar</a>
                                 {!!Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id.'/deletar', 'style' => 'display:inline;']) !!}
-                                <button type="submit" class="btn btn-sm">Excluir</button>
+                                <button type="submit" class="btn btn-outline-danger" style="height: 35px;">Excluir</button>
                                 {!! Form::close() !!}
                             </td>
                             </tr>

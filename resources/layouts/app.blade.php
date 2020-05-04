@@ -33,7 +33,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 @if (!Auth::guest())
-                <a class="navbar-brand" href="{{ url('/clientes') }}">
+                <a class="navbar-brand" href="{{ route('main') }}">
                     Clientes
                 </a>
                 @endif

@@ -43,7 +43,7 @@ class ClientesController extends Controller{
         $cliente = Cliente::findOrFail($id);
         $cliente->update($request->all());
 
-        return Redirect::to('clientes');
+        return redirect()->route('main');
 
     }
 
@@ -52,7 +52,7 @@ class ClientesController extends Controller{
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
 
-        return Redirect::to('clientes');
+        return redirect()->route('main');
 
     }
 }

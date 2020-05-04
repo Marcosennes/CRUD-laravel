@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('contacts','Contacts@index');
 
 Route::group(['middleware' => 'web'], function() {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    
+    Route::get('/', 'ClientesController@index')->name('main');
     
     Route::auth();
     
     Route::get('home', 'HomeController@index')->name('home');
 
-    Route::get('/clientes', 'ClientesController@index');
     Route::get('/clientes/novo', 'ClientesController@novo');
     Route::get('clientes/{idCliente}/editar', 'ClientesController@editar');
     Route::post('/clientes/salvar', 'ClientesController@salvar');

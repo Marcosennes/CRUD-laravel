@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Clientes
-                <a class="pull-right" href = "{{url('/clientes')}}">Listagem Clientes</a>
+                <a class="pull-right" href = "{{ route('main') }}">Listagem Clientes</a>
                 </div>
 
                 <div class="card-body">
@@ -33,7 +32,7 @@
                         {!! Form::label('numero', 'Número') !!}
                         {!! Form::input('text', 'numero', null,  ['class' => 'form-control', 'placeholder' => 'Número']) !!}
                         
-                        {!! Form::submit('Salvar', ['class' => 'btn btn-primary ']) !!}
+                        {!! Form::submit('Salvar', ['class' => 'btn btn-outline-primary ']) !!}
 
                         {!! Form::close() !!}
                 </div>
