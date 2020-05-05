@@ -20,17 +20,23 @@
                     @if(Request::is('*/editar'))
                         {!! Form::model($cliente, ['method' => 'PATCH', 'url' => 'clientes/'.$cliente->id]) !!}
                     @else
-                        {!! Form::open(['url' => 'clientes/salvar']) !!}    
+                        {!! Form::open(['url' => 'clientes/salvar', 'enctype' => "multipart/form-data"]) !!}    
                     @endif
 
                         {!! Form::label('nome', 'Nome') !!}
                         {!! Form::input('text', 'nome', null,  ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome']) !!}
-                        
+
+                        {!! Form::label('email', 'Email') !!}
+                        {!! Form::input('text', 'email', null,  ['class' => 'form-control', 'autofocus', 'placeholder' => 'Email']) !!}
+
                         {!! Form::label('endereco', 'Endereço') !!}
                         {!! Form::input('text', 'endereco', null,  ['class' => 'form-control', 'placeholder' => 'Endereço']) !!}
                         
                         {!! Form::label('numero', 'Número') !!}
                         {!! Form::input('text', 'numero', null,  ['class' => 'form-control', 'placeholder' => 'Número']) !!}
+
+                        {!! Form::label('foto', 'Foto') !!}
+                        {!! Form::input('file', 'foto', null,  ['class' => 'form-control', 'placeholder' => 'Insira uma foto']) !!}
                         
                         {!! Form::submit('Salvar', ['class' => 'btn btn-outline-primary ']) !!}
 
